@@ -85,12 +85,45 @@ npm run dev
 
 访问 http://localhost:5173 开始使用！
 
+## 🚀 部署
+
+### GitHub Pages 部署（前端）
+
+本项目已配置自动部署到 GitHub Pages：
+
+1. **启用 GitHub Pages**
+   - 访问 [仓库设置 → Pages](https://github.com/soal2/SmartCookAI/settings/pages)
+   - Source 选择: **GitHub Actions**
+
+2. **配置后端 API 地址**
+   ```bash
+   # 编辑 frontend/.env.production
+   VITE_API_BASE_URL=https://your-backend-api.com/api
+   ```
+
+3. **推送代码自动部署**
+   ```bash
+   git push origin main
+   ```
+
+4. **访问部署后的应用**
+   - 🌐 https://soal2.github.io/SmartCookAI/
+
+详细部署指南请查看 [DEPLOYMENT.md](DEPLOYMENT.md)
+
+### 后端部署建议
+
+- 阿里云 ECS / 腾讯云
+- Vercel / Railway
+- Docker 容器化部署
+
 ## 📚 项目文档
 
 - [API 接口文档](backend/docs/API_DOCUMENTATION.md)
 - [产品需求文档 PRD](backend/SmartCookAI.md)
 - [P0 实现总结](backend/docs/P0_IMPLEMENTATION_SUMMARY.md)
 - [测试文档](backend/docs/TESTING_README.md)
+- [部署指南](DEPLOYMENT.md) ⭐
 - [AI Agent 开发指南](.github/copilot-instructions.md)
 
 ## 🧪 测试
