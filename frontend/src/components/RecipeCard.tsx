@@ -11,8 +11,7 @@ interface RecipeCardProps {
 }
 
 export default function RecipeCard({ recipe, onViewDetails, onFavorite }: RecipeCardProps) {
-  // 统计已有和需补充的食材
-  const availableCount = recipe.ingredients.filter(i => i.status === '已有').length;
+  // 统计需补充的食材
   const needCount = recipe.ingredients.filter(i => i.status === '需补充').length;
 
   return (

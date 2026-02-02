@@ -57,9 +57,6 @@ if (Array.isArray(payload)) {
     }
   };
 
-  const totalCount =
-    ingredients.fridge.length + ingredients.freezer.length + ingredients.pantry.length;
-
   if (loading) {
     return (
       <div className="flex-1 flex items-center justify-center">

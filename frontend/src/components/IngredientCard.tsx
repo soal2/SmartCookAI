@@ -10,7 +10,7 @@ interface IngredientCardProps {
   onDelete?: (id: number) => void;
 }
 
-export default function IngredientCard({ ingredient, onQuantityChange, onDelete }: IngredientCardProps) {
+export default function IngredientCard({ ingredient, onQuantityChange }: IngredientCardProps) {
   const handleIncrease = () => {
     if (ingredient.id && onQuantityChange) {
       onQuantityChange(ingredient.id, 1);
