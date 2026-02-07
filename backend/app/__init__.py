@@ -38,13 +38,14 @@ def create_app():
     limiter.init_app(app)
 
     # 注册路由
-    from app.routes import recipes, ingredients, favorites, shopping_list, substitutions
+    from app.routes import recipes, ingredients, favorites, shopping_list, substitutions, recipe_chain
 
     app.register_blueprint(recipes.bp)
     app.register_blueprint(ingredients.bp)
     app.register_blueprint(favorites.bp)
     app.register_blueprint(shopping_list.bp)
     app.register_blueprint(substitutions.bp)
+    app.register_blueprint(recipe_chain.bp)
 
     # 健康检查端点
     @app.route('/health')

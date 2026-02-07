@@ -9,6 +9,7 @@
 - [2. 食材管理 API](#2-食材管理-api)
 - [3. 收藏夹管理 API](#3-收藏夹管理-api)
 - [4. 购物清单 API](#4-购物清单-api)
+- [5. 链式食谱生成 API](#5-链式食谱生成-api)
 - [数据模型](#数据模型)
 - [错误处理](#错误处理)
 
@@ -974,6 +975,46 @@ GET /api/ingredients/by-storage?storage=fridge
 {
   "success": true,
   "message": "已购买项目已清除"
+}
+```
+
+---
+
+## 5. 链式食谱生成 API
+
+### 5.1 链式流程处理
+
+基于用户模糊输入进行食材分析、食谱生成、替代方案推荐的全链路处理。
+
+**接口**: `POST /api/chain/process`
+
+**请求体**:
+```json
+{
+  "user_input": "我想做适合减脂的鸡肉料理，家里只有鸡胸肉和西兰花"
+}
+```
+
+**响应示例**:
+```json
+{
+  "success": true,
+  "analysis": {
+    "intent": "食谱生成",
+    "ingredients": [
+      {"name": "鸡胸肉", "quantity": "适量", "state": "新鲜"},
+      {"name": "西兰花", "quantity": "适量", "state": "新鲜"}
+    ],
+    "filters": {"scenario": "快手菜", "skill": "新手"},
+    "constraints": []
+  },
+  "recipes": [],
+  "substitutions": {
+    "summary": "已为缺失食材生成替代建议。",
+    "items": []
+  },
+  "missing_ingredients": [],
+  "substitution_candidates": {}
 }
 ```
 
